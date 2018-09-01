@@ -148,7 +148,9 @@ src/PageApp.o: ../src/PageApp.cpp ../src/PageApp.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/Wx/button.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/anybutton.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/anybutton.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/button.h
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/button.h \
+ ../src/Calendar.h ../src/page/Year.h ../src/page/Month.h \
+ ../src/page/Day.h ../src/page/post.h
 
 ../src/PageApp.h:
 
@@ -451,3 +453,13 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/anybutton.h:
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/anybutton.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/button.h:
+
+../src/Calendar.h:
+
+../src/page/Year.h:
+
+../src/page/Month.h:
+
+../src/page/Day.h:
+
+../src/page/post.h:

@@ -15,7 +15,7 @@ enum PAGE_ID {
 
 PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
 		const wxSize& size) :
-		wxFrame(NULL, wxID_ANY, title, pos, size) {
+		wxFrame(NULL, wxID_ANY, title, pos, size), calendar(nullptr) {
 	Center();
 
 	panel = new wxPanel(this, wxID_ANY);
@@ -52,6 +52,6 @@ void PageFrame::connectEventHandlers() {
 			wxCommandEventHandler(PageFrame::OnAddPost));
 }
 
-void PageFrame::setCalendar(Page::Calendar &calendar){
+void PageFrame::setCalendar(Page::Calendar *calendar) {
 	this->calendar = calendar;
 }

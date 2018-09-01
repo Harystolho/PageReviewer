@@ -240,7 +240,9 @@ src/main.o: ../src/main.cpp \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/mdi.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/mdi.h \
  ../src/page/post.h ../src/PageApp.h ../src/PageFrame.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/Wx/button.h
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/Wx/button.h \
+ ../src/Calendar.h ../src/page/Year.h ../src/page/Month.h \
+ ../src/page/Day.h ../src/page/post.h
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxprec.h:
 
@@ -729,3 +731,13 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/mdi.h:
 ../src/PageFrame.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/Wx/button.h:
+
+../src/Calendar.h:
+
+../src/page/Year.h:
+
+../src/page/Month.h:
+
+../src/page/Day.h:
+
+../src/page/post.h:

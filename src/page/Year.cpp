@@ -9,13 +9,17 @@
 
 namespace Page {
 
-Year::Year(int year) : year(year) {
-
+Year::Year(int year) :
+		year(year) {
 
 }
 
 Year::~Year() {
 	// TODO Auto-generated destructor stub
+}
+
+Month& Year::getMonth(int index) {
+	return months[index];
 }
 
 }

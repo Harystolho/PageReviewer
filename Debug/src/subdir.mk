@@ -4,16 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Calendar.cpp \
 ../src/PageApp.cpp \
 ../src/PageFrame.cpp \
 ../src/main.cpp 
 
 OBJS += \
+./src/Calendar.o \
 ./src/PageApp.o \
 ./src/PageFrame.o \
 ./src/main.o 
 
 CPP_DEPS += \
+./src/Calendar.d \
 ./src/PageApp.d \
 ./src/PageFrame.d \
 ./src/main.d 

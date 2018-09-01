@@ -9,6 +9,7 @@
 #define CALENDAR_H_
 
 #include "page/Year.h"
+#include "chrono"
 
 namespace Page {
 
@@ -19,7 +20,16 @@ public:
 
 	void setup();
 	void drawCalendar();
+
+	inline Year& getYear() {
+		return year;
+	}
+
+	static int getCurrentYear();
+	static int getCurrentMonth();
+	static int getCurrentDay();
 private:
+	Year year;
 };
 
 } /* namespace Page */

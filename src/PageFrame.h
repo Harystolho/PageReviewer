@@ -19,10 +19,10 @@ class PageFrame: public wxFrame {
 public:
 	PageFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
 
-	void setCalendar(Page::Calendar &calendar);
+	void setCalendar(Page::Calendar *calendar);
 	const int BUTTON_SPACING = 15;
 private:
-	Page::Calendar& calendar;
+	Page::Calendar* calendar;
 
 	wxButton* addPost;
 	wxButton* listPosts;
