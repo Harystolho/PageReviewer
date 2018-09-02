@@ -16,6 +16,8 @@
 #include "wx/datectrl.h"
 #include "wx/stattext.h"
 
+class PageFrame;
+
 class AddPostWindow : public wxFrame{
 public:
 	AddPostWindow(wxWindow* parent);

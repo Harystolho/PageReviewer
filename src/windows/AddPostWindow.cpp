@@ -36,11 +36,11 @@ void AddPostWindow::createObjects() {
 	wxStaticText *textLabel = new wxStaticText(panel, wxID_ANY, "Text",
 			wxPoint(), wxSize());
 
-	title = new wxTextCtrl(panel, ADD_POST_ID::TITLE_ID, wxT(""),
+	title = new wxTextCtrl(panel, TITLE_ID, wxT(""),
 			wxPoint(0, 0));
-	link = new wxTextCtrl(panel, ADD_POST_ID::TITLE_ID, wxT(""), wxPoint(0, 0));
-	text = new wxTextCtrl(panel, ADD_POST_ID::TITLE_ID, wxT(""), wxPoint(0, 0));
-	date = new wxDatePickerCtrl(panel, ADD_POST_ID::DATE_ID, wxDateTime::Now(),
+	link = new wxTextCtrl(panel, TITLE_ID, wxT(""), wxPoint(0, 0));
+	text = new wxTextCtrl(panel, TEXT_ID, wxT(""), wxPoint(0, 0));
+	date = new wxDatePickerCtrl(panel, DATE_ID, wxDateTime::Now(),
 			wxPoint(0, 0));
 	add = new wxButton(panel, ADD_ID, wxT("Add Post"));
 

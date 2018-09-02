@@ -157,7 +157,19 @@ src/PageApp.o: ../src/PageApp.cpp ../src/PageApp.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/scrolwin.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h \
  ../src/windows/../page/Day.h ../src/windows/../page/post.h \
- ../src/windows/AddPostWindow.h
+ ../src/windows/AddPostWindow.h ../src/windows/../PageFrame.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textctrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textentry.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textentry.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/ioswrap.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textctrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datetimectrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datetimectrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datectrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/stattext.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h
 
 ../src/PageApp.h:
 
@@ -488,3 +500,29 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h:
 ../src/windows/../page/post.h:
 
 ../src/windows/AddPostWindow.h:
+
+../src/windows/../PageFrame.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textctrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textentry.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textentry.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/ioswrap.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textctrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datetimectrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datetimectrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datectrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/stattext.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h:

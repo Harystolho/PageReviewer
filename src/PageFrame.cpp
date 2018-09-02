@@ -29,10 +29,10 @@ void PageFrame::OnAddPost(wxCommandEvent& event) {
 }
 
 void PageFrame::createObjects() {
-	addPost = new wxButton(panel, PAGE_ID::ADD_POST, wxT("Add Post"),
+	addPost = new wxButton(panel, ADD_POST, wxT("Add Post"),
 			wxPoint(15, 15));
 
-	listPosts = new wxButton(panel, PAGE_ID::LIST_POSTS, wxT("List Posts"),
+	listPosts = new wxButton(panel, LIST_POSTS, wxT("List Posts"),
 			wxPoint(
 					addPost->GetPosition().x + addPost->GetSize().GetWidth()
 							+ PageFrame::BUTTON_SPACING, 15));
