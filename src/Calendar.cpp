@@ -26,8 +26,18 @@ Year* Calendar::getYear(int year) {
 	return years.at(getCurrentYear() - year);
 }
 
+void Calendar::addPost(Post* post){
+	Year* postYear = getYear(post->getDate().GetYear());
+
+	Month* postMonth = postYear->getMonth(post->getDate().GetMonth());
+
+	Day* postDay = postMonth->getDay(post->getDate().GetDay());
+
+	postDay->addPost(post);
+}
+
 int Calendar::getCurrentYear() {
-	return parts->tm_year;
+	return parts->tm_year + 1900;
 }
 
 int Calendar::getCurrentMonth() {

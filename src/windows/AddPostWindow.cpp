@@ -51,15 +51,28 @@ void AddPostWindow::createObjects() {
 	text = new wxTextCtrl(panel, TEXT_ID, wxT(""),
 			wxPoint(
 					textLabel->GetPosition().x + textLabel->GetSize().GetWidth()
-							+ 15, textLabel->GetPosition().y));
+							+ 15, textLabel->GetPosition().y),
+			wxSize(400, 170));
 	date = new wxDatePickerCtrl(panel, DATE_ID, wxDateTime::Now(),
-			wxPoint(5,
-					textLabel->GetPosition().y
-							+ textLabel->GetSize().GetHeight() + 10));
+			wxPoint(title->GetPosition().x + title->GetSize().GetWidth() + 15,
+					title->GetPosition().y), title->GetSize());
 	add = new wxButton(panel, ADD_ID, wxT("Add Post"),
-			wxPoint(5,
-					date->GetPosition().y + date->GetSize().GetHeight() + 10));
+			wxPoint(link->GetPosition().x + link->GetSize().GetWidth() + 15,
+					link->GetPosition().y));
 
+	Connect(ADD_ID, wxEVT_COMMAND_BUTTON_CLICKED,
+			wxCommandEventHandler(AddPostWindow::OnAddPost));
 
+}
 
+void AddPostWindow::OnAddPost(wxCommandEvent& event) {
+	Post *post = new Post();
+	post->setTitle(title->GetValue().ToStdString());
+	post->setLink(link->GetValue().ToStdString());
+	post->setDate(date->GetValue());
+	post->setText(text->GetValue().ToStdString());
+
+	pageFrame->getCalendar()->addPost(post);
+
+	Close(true);
 }

@@ -17,11 +17,11 @@ class Day {
 public:
 	Day();
 	virtual ~Day();
-	std::vector<Post> getPosts();
-	bool addPost(Post &post);
-	bool removePost(Post &post);
+	std::vector<Post*> getPosts();
+	void addPost(Post *post);
+	bool removePost(Post *post);
 private:
-	std::vector<Post> posts;
+	std::vector<Post*> posts;
 };
 
 } /* namespace Page */

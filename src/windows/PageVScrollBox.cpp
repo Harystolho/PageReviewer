@@ -6,6 +6,7 @@
  */
 
 #include "PageVScrollBox.h"
+#include "iostream"
 
 PageVScrollBox::PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 		wxSize size) :
@@ -15,7 +16,6 @@ PageVScrollBox::PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 }
 
 PageVScrollBox::~PageVScrollBox() {
-	// TODO Auto-generated destructor stub
 }
 
 wxCoord PageVScrollBox::OnGetRowHeight(size_t row) const {
@@ -27,7 +27,7 @@ void PageVScrollBox::setDay(Page::Day* day){
 }
 
 void PageVScrollBox::drawPosts(){
-	for(Post p : PageDay->getPosts()){
-
+	for(Post* p : PageDay->getPosts()){
+		SetBackgroundColour(*wxYELLOW);
 	}
 }

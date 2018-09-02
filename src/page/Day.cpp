@@ -17,7 +17,11 @@ Day::~Day() {
 	// TODO Auto-generated destructor stub
 }
 
-std::vector<Post> Day::getPosts(){
+void Day::addPost(Post* post){
+	posts.push_back(post);
+}
+
+std::vector<Post*> Day::getPosts(){
 	return posts;
 }
 

@@ -11,6 +11,7 @@
 #include "wx/vscroll.h"
 #include "../page/Day.h"
 #include "../page/post.h"
+#include "wx/gdicmn.h"
 
 class PageVScrollBox: public wxVScrolledWindow {
 public:

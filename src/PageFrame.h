@@ -17,6 +17,8 @@
 #include "wx/gdicmn.h"
 #include "windows/PageVScrollBox.h"
 #include "windows/AddPostWindow.h"
+#include "wx/wxcrtvararg.h"
+#include <list>
 
 class PageFrame: public wxFrame {
 public:
@@ -24,6 +26,8 @@ public:
 
 	void setCalendar(Page::Calendar *calendar);
 	void showCalendar();
+
+	Page::Calendar* getCalendar();
 
 	const int BUTTON_SPACING = 15;
 private:

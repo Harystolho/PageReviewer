@@ -29,8 +29,7 @@ void PageFrame::OnAddPost(wxCommandEvent& event) {
 }
 
 void PageFrame::createObjects() {
-	addPost = new wxButton(panel, ADD_POST, wxT("Add Post"),
-			wxPoint(15, 15));
+	addPost = new wxButton(panel, ADD_POST, wxT("Add Post"), wxPoint(15, 15));
 
 	listPosts = new wxButton(panel, LIST_POSTS, wxT("List Posts"),
 			wxPoint(
@@ -47,8 +46,10 @@ void PageFrame::createObjects() {
 }
 
 void PageFrame::connectEventHandlers() {
-	Connect(PAGE_ID::ADD_POST, wxEVT_COMMAND_BUTTON_CLICKED,
+	Connect(ADD_POST, wxEVT_COMMAND_BUTTON_CLICKED,
 			wxCommandEventHandler(PageFrame::OnAddPost));
+	Connect(LIST_POSTS, wxEVT_COMMAND_BUTTON_CLICKED,
+			wxCommandEventHandler(PageFrame::onListPosts));
 }
 
 void PageFrame::setCalendar(Page::Calendar *calendar) {
@@ -71,8 +72,10 @@ void PageFrame::drawCalendar() {
 
 	int day = 1;
 
-	for (int j = 0; j <= rows; j++) {
-		for (int i = 0; i <= colums; i++) {
+	bool exit = false;
+
+	for (int j = 0; j < rows && !exit; j++) {
+		for (int i = 0; i < colums; i++) {
 			PageVScrollBox *window = new PageVScrollBox(calendarPanel, wxID_ANY,
 					wxPoint(width * i, height * j), wxSize(width, height));
 
@@ -80,13 +83,27 @@ void PageFrame::drawCalendar() {
 					calendar->getYear(Page::Calendar::getCurrentYear())->getMonth(
 							Page::Calendar::getCurrentMonth())->getDay(day));
 
+			window->SetBackgroundColour(*wxBLUE);
+
 			window->drawPosts();
 
-			if(day == 31){
+			if (day == 31) {
+				exit = true;
 				break;
-			} else{
+			} else {
 				day++;
 			}
 		}
 	}
+
+	calendarPanel->Refresh(true);
+}
+
+void PageFrame::onListPosts(wxCommandEvent& event) {
+	calendarPanel->DestroyChildren();
+	drawCalendar();
+}
+
+Page::Calendar* PageFrame::getCalendar() {
+	return calendar;
 }

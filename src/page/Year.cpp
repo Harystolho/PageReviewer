@@ -12,7 +12,7 @@ namespace Page {
 Year::Year(int year) :
 		year(year) {
 
-	for(int i=0; i <= 11; i++){
+	for(int i=0; i < 12; i++){
 		months[i] = new Month();
 	}
 }

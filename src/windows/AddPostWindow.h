@@ -11,10 +11,12 @@
 #include "../PageFrame.h"
 #include "wx/frame.h"
 #include "wx/panel.h"
+#include "wx/event.h"
 #include "wx/button.h"
 #include "wx/textctrl.h"
 #include "wx/datectrl.h"
 #include "wx/stattext.h"
+#include "../page/post.h"
 
 class PageFrame;
 
@@ -34,6 +36,9 @@ private:
 
 	PageFrame* pageFrame;
 	wxPanel* panel;
+
+	void OnAddPost(wxCommandEvent& event);
+
 };
 
 #endif /* WINDOWS_ADDPOSTWINDOW_H_ */
