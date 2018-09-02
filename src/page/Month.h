@@ -16,9 +16,12 @@ class Month {
 public:
 	Month();
 	virtual ~Month();
+
+	Day* getDay(int day);
+
 private:
 	std::string name;
-	Day days[31];
+	Day* days[31] = { 0 };
 };
 
 } /* namespace Page */

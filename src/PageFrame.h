@@ -14,12 +14,17 @@
 #include "wx/panel.h"
 #include "Wx/button.h"
 #include "Calendar.h"
+#include "wx/gdicmn.h"
+#include "windows/PageVScrollBox.h"
+#include "windows/AddPostWindow.h"
 
 class PageFrame: public wxFrame {
 public:
 	PageFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
 
 	void setCalendar(Page::Calendar *calendar);
+	void showCalendar();
+
 	const int BUTTON_SPACING = 15;
 private:
 	Page::Calendar* calendar;
@@ -35,6 +40,8 @@ private:
 
 	void createObjects();
 	void connectEventHandlers();
+
+	void drawCalendar();
 
 wxDECLARE_EVENT_TABLE();
 };

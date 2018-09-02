@@ -17,7 +17,7 @@ public:
 private:
 	PageFrame* frame;
 
-	Page::Calendar* createCalendar(int year);
+	Page::Calendar* createCalendar();
 };
 
 #endif /* PAGEAPP_H_ */

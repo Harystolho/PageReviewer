@@ -10,11 +10,17 @@
 namespace Page {
 
 Month::Month() {
-	// TODO Auto-generated constructor stub
+	for (int i = 0; i <= 30; i++) {
+		days[i] = new Day();
+	}
 }
 
 Month::~Month() {
 	// TODO Auto-generated destructor stub
+}
+
+Day* Month::getDay(int day) {
+	return days[day - 1];
 }
 
 } /* namespace Page */

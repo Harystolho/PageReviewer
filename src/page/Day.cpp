@@ -17,4 +17,8 @@ Day::~Day() {
 	// TODO Auto-generated destructor stub
 }
 
+std::vector<Post> Day::getPosts(){
+	return posts;
+}
+
 } /* namespace Page */

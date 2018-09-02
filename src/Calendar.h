@@ -10,26 +10,26 @@
 
 #include "page/Year.h"
 #include "chrono"
+#include <vector>
 
 namespace Page {
 
 class Calendar {
 public:
-	Calendar(int year);
+	Calendar();
 	virtual ~Calendar();
 
 	void setup();
 	void drawCalendar();
 
-	inline Year& getYear() {
-		return year;
-	}
+	Year* getYear(int year);
 
 	static int getCurrentYear();
 	static int getCurrentMonth();
 	static int getCurrentDay();
+
 private:
-	Year year;
+	std::vector<Year*> years;
 };
 
 } /* namespace Page */

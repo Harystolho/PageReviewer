@@ -150,7 +150,14 @@ src/PageApp.o: ../src/PageApp.cpp ../src/PageApp.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/anybutton.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/button.h \
  ../src/Calendar.h ../src/page/Year.h ../src/page/Month.h \
- ../src/page/Day.h ../src/page/post.h
+ ../src/page/Day.h ../src/page/post.h ../src/windows/PageVScrollBox.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/vscroll.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/position.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/scrolwin.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/scrolwin.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h \
+ ../src/windows/../page/Day.h ../src/windows/../page/post.h \
+ ../src/windows/AddPostWindow.h
 
 ../src/PageApp.h:
 
@@ -463,3 +470,21 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/button.h:
 ../src/page/Day.h:
 
 ../src/page/post.h:
+
+../src/windows/PageVScrollBox.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/vscroll.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/position.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/scrolwin.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/scrolwin.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h:
+
+../src/windows/../page/Day.h:
+
+../src/windows/../page/post.h:
+
+../src/windows/AddPostWindow.h:

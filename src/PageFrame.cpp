@@ -6,8 +6,6 @@
  */
 
 #include "PageFrame.h"
-#include "wx/gdicmn.h"
-#include "wx/crt.h"
 
 enum PAGE_ID {
 	ADD_POST, LIST_POSTS
@@ -26,7 +24,8 @@ PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
 }
 
 void PageFrame::OnAddPost(wxCommandEvent& event) {
-
+	AddPostWindow* window = new AddPostWindow(this);
+	window->Show(true);
 }
 
 void PageFrame::createObjects() {
@@ -54,4 +53,40 @@ void PageFrame::connectEventHandlers() {
 
 void PageFrame::setCalendar(Page::Calendar *calendar) {
 	this->calendar = calendar;
+}
+
+void PageFrame::showCalendar() {
+	if (calendar != nullptr) {
+		drawCalendar();
+	}
+}
+
+void PageFrame::drawCalendar() {
+
+	int rows = 5;
+	int colums = 7;
+
+	int width = calendarPanel->GetSize().GetWidth() / colums;
+	int height = calendarPanel->GetSize().GetHeight() / rows;
+
+	int day = 1;
+
+	for (int j = 0; j <= rows; j++) {
+		for (int i = 0; i <= colums; i++) {
+			PageVScrollBox *window = new PageVScrollBox(calendarPanel, wxID_ANY,
+					wxPoint(width * i, height * j), wxSize(width, height));
+
+			window->setDay(
+					calendar->getYear(Page::Calendar::getCurrentYear())->getMonth(
+							Page::Calendar::getCurrentMonth())->getDay(day));
+
+			window->drawPosts();
+
+			if(day == 31){
+				break;
+			} else{
+				day++;
+			}
+		}
+	}
 }

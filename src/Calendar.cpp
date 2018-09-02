@@ -7,37 +7,33 @@
 
 #include "Calendar.h"
 
+auto now = std::chrono::system_clock::now();
+std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+static tm* parts = std::localtime(&now_c);
+
 namespace Page {
 
-Calendar::Calendar(int year) :
-		year(year) {
-
+Calendar::Calendar() {
+	years.push_back(new Year(getCurrentYear()));
+	years.push_back(new Year(getCurrentYear() + 1));
 }
 
 Calendar::~Calendar() {
 	// TODO Auto-generated destructor stub
 }
 
-int Calendar::getCurrentYear() {
-	auto now = std::chrono::system_clock::now();
-	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-	tm* parts = std::localtime(&now_c);
+Year* Calendar::getYear(int year) {
+	return years.at(getCurrentYear() - year);
+}
 
+int Calendar::getCurrentYear() {
 	return parts->tm_year;
 }
 
 int Calendar::getCurrentMonth() {
-	auto now = std::chrono::system_clock::now();
-	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-	tm* parts = std::localtime(&now_c);
-
 	return parts->tm_mon;
 }
 int Calendar::getCurrentDay() {
-	auto now = std::chrono::system_clock::now();
-	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-	tm* parts = std::localtime(&now_c);
-
 	return parts->tm_mday;
 }
 

@@ -16,10 +16,14 @@ class Year {
 public:
 	Year(int year);
 	virtual ~Year();
-	Month& getMonth(int index);
+	Month* getMonth(int index);
+
+	inline int getYear(){
+		return year;
+	}
 private:
 	int year;
-	Month months[12];
+	Month* months[12] = {0};
 };
 
 }
