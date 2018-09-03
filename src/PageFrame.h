@@ -31,6 +31,9 @@ public:
 
 	const int BUTTON_SPACING = 15;
 private:
+
+	uint8_t monthIndex = 0;
+
 	Page::Calendar* calendar;
 
 	wxButton* addPost;

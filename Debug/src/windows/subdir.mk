@@ -5,15 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/windows/AddPostWindow.cpp \
-../src/windows/PageVScrollBox.cpp 
+../src/windows/PageVScrollBox.cpp \
+../src/windows/PostAdapter.cpp 
 
 OBJS += \
 ./src/windows/AddPostWindow.o \
-./src/windows/PageVScrollBox.o 
+./src/windows/PageVScrollBox.o \
+./src/windows/PostAdapter.o 
 
 CPP_DEPS += \
 ./src/windows/AddPostWindow.d \
-./src/windows/PageVScrollBox.d 
+./src/windows/PageVScrollBox.d \
+./src/windows/PostAdapter.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

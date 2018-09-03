@@ -11,11 +11,14 @@
 #include "wx/vscroll.h"
 #include "../page/Day.h"
 #include "../page/post.h"
+#include "PostAdapter.h"
+#include "wx/sizer.h"
 #include "wx/gdicmn.h"
+#include <iostream>
 
 class PageVScrollBox: public wxVScrolledWindow {
 public:
-	PageVScrollBox(wxWindow* window,wxWindowID id, wxPoint point, wxSize size);
+	PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point, wxSize size);
 	virtual ~PageVScrollBox();
 
 	wxCoord OnGetRowHeight(size_t row) const;
@@ -27,6 +30,12 @@ public:
 private:
 	int day;
 	Page::Day* PageDay;
+
+	wxBoxSizer* sizer;
+
+	void onTitle(wxCommandEvent& event);
+
+	int rowHeight = 0;
 };
 
 #endif /* WINDOWS_PAGEVSCROLLBOX_H_ */

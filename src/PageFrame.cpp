@@ -81,9 +81,8 @@ void PageFrame::drawCalendar() {
 
 			window->setDay(
 					calendar->getYear(Page::Calendar::getCurrentYear())->getMonth(
-							Page::Calendar::getCurrentMonth())->getDay(day));
-
-			window->SetBackgroundColour(*wxBLUE);
+							Page::Calendar::getCurrentMonth() + monthIndex)->getDay(
+							day));
 
 			window->drawPosts();
 
