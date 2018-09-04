@@ -29,6 +29,8 @@ public:
 private:
 	wxFrame* frame;
 	Post* post;
+
+	void updatePost(Post* post, int days);
 };
 
 #endif /* WINDOWS_POSTADAPTER_H_ */

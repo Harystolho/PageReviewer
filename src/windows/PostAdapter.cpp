@@ -18,10 +18,8 @@ PostAdapter::~PostAdapter() {
 }
 
 void PostAdapter::openWindow() {
-	if (frame == nullptr) {
-		frame = new wxFrame(NULL, wxID_ANY, post->getTitle(), wxDefaultPosition,
-				wxSize(1000, 500), wxDEFAULT_FRAME_STYLE);
-	}
+	frame = new wxFrame(NULL, wxID_ANY, post->getTitle(), wxDefaultPosition,
+			wxSize(1000, 500), wxDEFAULT_FRAME_STYLE);
 
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -41,11 +39,24 @@ void PostAdapter::openWindow() {
 	wxButton *THIRTYdays = new wxButton(frame, 554, "+30 Days");
 	wxButton *FIFYdays = new wxButton(frame, 555, "+50 Days");
 
-	ONEday->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&){
-		pageFrame->getCalendar()->removePost(post);
-		post->updateReviewDate(post->getDate().Add(wxDateSpan::Days(1)));
-		pageFrame->getCalendar()->addPost(post);
+	ONEday->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		updatePost(post, 1);
 	}, 550);
+	THREEdays->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		updatePost(post, 3);
+	}, 551);
+	SEVENdays->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		updatePost(post, 7);
+	}, 552);
+	FIFTEENdays->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		updatePost(post, 15);
+	}, 553);
+	THIRTYdays->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		updatePost(post, 30);
+	}, 554);
+	FIFYdays->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		updatePost(post, 50);
+	}, 555);
 
 	timeSizer->Add(ONEday, 1);
 	timeSizer->Add(THREEdays, 1);
@@ -82,4 +93,10 @@ void PostAdapter::openWindow() {
 	frame->Show();
 }
 
-
+void PostAdapter::updatePost(Post* post, int days) {
+	pageFrame->getCalendar()->removePost(post);
+	post->updateReviewDate(post->getDate().Add(wxDateSpan::Days(days)));
+	pageFrame->getCalendar()->addPost(post);
+	frame->Close();
+	pageFrame->redrawCalendar();
+}
