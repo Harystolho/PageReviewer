@@ -24,11 +24,13 @@ void PostAdapter::openWindow() {
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
 
 	wxStaticText *title = new wxStaticText(frame, wxID_ANY, post->getTitle());
-	wxHyperlinkCtrl *link = new wxHyperlinkCtrl(frame, wxID_ANY,
-			post->getLink(), post->getLink());
-
 	verticalSizer->Add(title, 1, wxALIGN_CENTER | wxTOP, 5);
-	verticalSizer->Add(link, 1, wxALIGN_CENTER | wxBOTTOM, 15);
+
+	if(!post->getLink().empty()){
+		wxHyperlinkCtrl *link = new wxHyperlinkCtrl(frame, wxID_ANY,
+				post->getLink(), post->getLink());
+		verticalSizer->Add(link, 1, wxALIGN_CENTER | wxBOTTOM, 15);
+	}
 
 	wxBoxSizer *timeSizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -78,6 +80,19 @@ void PostAdapter::openWindow() {
 	wxButton *edit = new wxButton(frame, 556, "EDIT");
 	wxButton *save = new wxButton(frame, 557, "SAVE");
 	wxButton *remove = new wxButton(frame, 558, "REMOVE");
+
+	edit->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		text->SetEditable(true);
+	}, 556);
+	save->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		post->setText(text->GetValue().ToStdString());
+	}, 557);
+	remove->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+		pageFrame->getCalendar()->removePost(post);
+		delete post;
+		frame->Close();
+		pageFrame->redrawCalendar();
+	}, 558);
 
 	editTools->Add(edit, 1, wxALL, 3);
 	editTools->Add(save, 1, wxALL, 3);
