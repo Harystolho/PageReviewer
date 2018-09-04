@@ -29,6 +29,8 @@ public:
 
 	Page::Calendar* getCalendar();
 
+	void redrawCalendar();
+
 	const int BUTTON_SPACING = 15;
 private:
 

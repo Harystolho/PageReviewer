@@ -75,4 +75,5 @@ void AddPostWindow::OnAddPost(wxCommandEvent& event) {
 	pageFrame->getCalendar()->addPost(post);
 
 	Close(true);
+	pageFrame->redrawCalendar();
 }

@@ -39,13 +39,12 @@ void PageVScrollBox::drawPosts() {
 			text->openWindow();
 		}, id);
 
-
 		rowHeight = text->GetSize().GetHeight();
 
-		GetSizer()->Add(text);
+		GetSizer()->Add(text, 1, wxALL, 2);
 	}
 	// TODO fix this shit
 	SetSizerAndFit(sizer, true);
-	SetRowCount(GetSizer()->GetItemCount());
+	//SetRowCount(GetSizer()->GetItemCount());
 }
 

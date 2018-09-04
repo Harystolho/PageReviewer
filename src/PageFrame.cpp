@@ -99,8 +99,12 @@ void PageFrame::drawCalendar() {
 }
 
 void PageFrame::onListPosts(wxCommandEvent& event) {
+	redrawCalendar();
+}
+
+void PageFrame::redrawCalendar(){
 	calendarPanel->DestroyChildren();
-	drawCalendar();
+		drawCalendar();
 }
 
 Page::Calendar* PageFrame::getCalendar() {
