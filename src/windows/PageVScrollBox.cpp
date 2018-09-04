@@ -42,7 +42,6 @@ void PageVScrollBox::drawPosts() {
 
 		rowHeight = text->GetSize().GetHeight();
 
-		text->SetForegroundColour(*wxWHITE);
 		GetSizer()->Add(text);
 	}
 	// TODO fix this shit

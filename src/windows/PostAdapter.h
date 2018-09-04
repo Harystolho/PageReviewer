@@ -11,6 +11,10 @@
 #include "../page/post.h"
 #include "wx/stattext.h"
 #include "wx/wxcrtvararg.h"
+#include "wx/frame.h"
+#include "wx/sizer.h"
+#include "wx/stattext.h"
+#include "wx/button.h"
 
 class PostAdapter: public wxStaticText {
 public:
@@ -20,6 +24,7 @@ public:
 	void openWindow();
 
 private:
+	wxFrame* frame;
 	Post* post;
 };
 
