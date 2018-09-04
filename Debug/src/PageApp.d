@@ -163,13 +163,16 @@ src/PageApp.o: ../src/PageApp.cpp ../src/PageApp.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxcrtvararg.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sizer.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h \
- ../src/windows/AddPostWindow.h ../src/windows/../PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textctrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textentry.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textentry.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/ioswrap.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textctrl.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h \
+ ../src/windows/AddPostWindow.h ../src/windows/../PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datetimectrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datetimectrl.h \
@@ -515,12 +518,6 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxcrtvararg.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sizer.h:
 
-D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h:
-
-../src/windows/AddPostWindow.h:
-
-../src/windows/../PageFrame.h:
-
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textctrl.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textentry.h:
@@ -530,6 +527,18 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textentry.h:
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/ioswrap.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/textctrl.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h:
+
+../src/windows/AddPostWindow.h:
+
+../src/windows/../PageFrame.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h:
 

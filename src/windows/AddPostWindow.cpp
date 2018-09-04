@@ -73,9 +73,6 @@ void AddPostWindow::OnAddPost(wxCommandEvent& event) {
 	post->setText(text->GetValue().ToStdString());
 
 	pageFrame->getCalendar()->addPost(post);
-	pageFrame->getCalendar()->addPost(post);
-	pageFrame->getCalendar()->addPost(post);
-	pageFrame->getCalendar()->addPost(post);
 
 	Close(true);
 }

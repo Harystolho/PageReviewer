@@ -24,7 +24,7 @@ void PostAdapter::openWindow() {
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
 
 	wxStaticText *title = new wxStaticText(frame, wxID_ANY, post->getTitle());
-	wxStaticText *link = new wxStaticText(frame, wxID_ANY, post->getLink());
+	wxHyperlinkCtrl *link = new wxHyperlinkCtrl(frame, wxID_ANY, post->getLink(), post->getLink());
 
 	verticalSizer->Add(title, 1, wxALIGN_CENTER | wxTOP, 5);
 	verticalSizer->Add(link, 1, wxALIGN_CENTER | wxBOTTOM, 15);
@@ -46,6 +46,11 @@ void PostAdapter::openWindow() {
 	timeSizer->Add(FIFYdays, 1);
 
 	verticalSizer->Add(timeSizer, 1, wxALIGN_TOP | wxALIGN_CENTER | wxALL, 5);
+
+	wxTextCtrl *text = new wxTextCtrl(frame, wxID_ANY, post->getText(), wxDefaultPosition, wxSize(600, -1), wxTE_MULTILINE);
+	text->SetEditable(false);
+
+	verticalSizer->Add(text, 5, wxEXPAND | wxALL, 7);
 
 	verticalSizer->SetSizeHints(frame);
 

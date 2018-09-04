@@ -14,6 +14,8 @@
 #include "wx/frame.h"
 #include "wx/sizer.h"
 #include "wx/stattext.h"
+#include "wx/textctrl.h"
+#include "wx/hyperlink.h"
 #include "wx/button.h"
 
 class PostAdapter: public wxStaticText {

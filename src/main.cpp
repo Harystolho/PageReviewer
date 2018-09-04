@@ -17,7 +17,6 @@
 #include "PageFrame.h"
 
 wxBEGIN_EVENT_TABLE(PageFrame, wxFrame)
-	//EVT_MENU(wxID_EXIT, PageFrame::onExit)
 wxEND_EVENT_TABLE()
 
 wxIMPLEMENT_APP(PageApp);
