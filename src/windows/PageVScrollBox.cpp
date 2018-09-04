@@ -32,7 +32,14 @@ void PageVScrollBox::setDay(Page::Day* day) {
 
 void PageVScrollBox::drawPosts() {
 	for (Post* p : PageDay->getPosts()) {
-		PostAdapter* text = new PostAdapter(this, wxID_ANY, p->getTitle(), p);
+		wxWindowID id = wxWindow::NewControlId();
+		PostAdapter* text = new PostAdapter(this, id, p->getTitle(), p);
+
+		text->Bind(wxEVT_LEFT_DOWN, [text](wxMouseEvent&){
+			text->openWindow();
+		}, id);
+
+
 		rowHeight = text->GetSize().GetHeight();
 
 		text->SetForegroundColour(*wxWHITE);
@@ -43,6 +50,3 @@ void PageVScrollBox::drawPosts() {
 	SetRowCount(GetSizer()->GetItemCount());
 }
 
-void PageVScrollBox::onTitle(wxCommandEvent& event) {
-
-}

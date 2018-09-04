@@ -14,7 +14,7 @@
 #include "PostAdapter.h"
 #include "wx/sizer.h"
 #include "wx/gdicmn.h"
-#include <iostream>
+#include "wx/event.h"
 
 class PageVScrollBox: public wxVScrolledWindow {
 public:
@@ -32,8 +32,6 @@ private:
 	Page::Day* PageDay;
 
 	wxBoxSizer* sizer;
-
-	void onTitle(wxCommandEvent& event);
 
 	int rowHeight = 0;
 };

@@ -10,6 +10,7 @@
 
 #include "../page/post.h"
 #include "wx/stattext.h"
+#include "wx/wxcrtvararg.h"
 
 class PostAdapter: public wxStaticText {
 public:

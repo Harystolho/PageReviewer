@@ -13,7 +13,7 @@ PostAdapter::PostAdapter(wxWindow* window, wxWindowID id, wxString text, Post* p
 }
 
 PostAdapter::~PostAdapter() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void PostAdapter::openWindow(){
