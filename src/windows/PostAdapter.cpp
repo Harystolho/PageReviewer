@@ -18,13 +18,14 @@ PostAdapter::~PostAdapter() {
 void PostAdapter::openWindow() {
 	if (frame == nullptr) {
 		frame = new wxFrame(NULL, wxID_ANY, post->getTitle(), wxDefaultPosition,
-				wxSize(650, 500), wxSTAY_ON_TOP | wxDEFAULT_FRAME_STYLE);
+				wxSize(1000, 500), wxSTAY_ON_TOP | wxDEFAULT_FRAME_STYLE);
 	}
 
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
 
 	wxStaticText *title = new wxStaticText(frame, wxID_ANY, post->getTitle());
-	wxHyperlinkCtrl *link = new wxHyperlinkCtrl(frame, wxID_ANY, post->getLink(), post->getLink());
+	wxHyperlinkCtrl *link = new wxHyperlinkCtrl(frame, wxID_ANY,
+			post->getLink(), post->getLink());
 
 	verticalSizer->Add(title, 1, wxALIGN_CENTER | wxTOP, 5);
 	verticalSizer->Add(link, 1, wxALIGN_CENTER | wxBOTTOM, 15);
@@ -47,10 +48,23 @@ void PostAdapter::openWindow() {
 
 	verticalSizer->Add(timeSizer, 1, wxALIGN_TOP | wxALIGN_CENTER | wxALL, 5);
 
-	wxTextCtrl *text = new wxTextCtrl(frame, wxID_ANY, post->getText(), wxDefaultPosition, wxSize(600, -1), wxTE_MULTILINE);
+	wxTextCtrl *text = new wxTextCtrl(frame, wxID_ANY, post->getText(),
+			wxDefaultPosition, wxSize(1000, -1), wxTE_MULTILINE);
 	text->SetEditable(false);
 
 	verticalSizer->Add(text, 5, wxEXPAND | wxALL, 7);
+
+	wxBoxSizer *editTools = new wxBoxSizer(wxHORIZONTAL);
+
+	wxButton *edit = new wxButton(frame, 556, "EDIT");
+	wxButton *save = new wxButton(frame, 557, "SAVE");
+	wxButton *remove = new wxButton(frame, 558, "REMOVE");
+
+	editTools->Add(edit, 1, wxALL, 3);
+	editTools->Add(save, 1, wxALL, 3);
+	editTools->Add(remove, 1, wxALL, 3);
+
+	verticalSizer->Add(editTools, 1, wxALIGN_CENTER);
 
 	verticalSizer->SetSizeHints(frame);
 
