@@ -19,7 +19,7 @@ public:
 	virtual ~Day();
 	std::vector<Post*> getPosts();
 	void addPost(Post *post);
-	bool removePost(Post *post);
+	void removePost(Post *post);
 private:
 	std::vector<Post*> posts;
 };

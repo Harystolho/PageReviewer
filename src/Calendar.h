@@ -26,6 +26,7 @@ public:
 	Year* getYear(int year);
 
 	void addPost(Post *post);
+	void removePost(Post* post);
 
 	static int getCurrentYear();
 	static int getCurrentMonth();

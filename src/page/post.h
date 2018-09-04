@@ -25,6 +25,8 @@ public:
 	void setDate(const wxDateTime date);
 	std::string getText();
 	void setText(const std::string& text);
+
+	void updateReviewDate(wxDateTime time);
 private:
 	std::string title;
 	std::string link;

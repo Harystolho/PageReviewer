@@ -8,7 +8,7 @@
 #include "post.h"
 #include <iostream>
 
-Post::Post(){
+Post::Post() {
 
 }
 
@@ -51,4 +51,11 @@ void Post::setText(const std::string& text) {
 
 std::string Post::getText() {
 	return text;
+}
+
+void Post::updateReviewDate(wxDateTime time) {
+	date = time;
+
+
+
 }

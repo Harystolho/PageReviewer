@@ -45,6 +45,14 @@ void Calendar::addPost(Post* post) {
 	postDay->addPost(post);
 }
 
+void Calendar::removePost(Post* post) {
+	Year* postYear = getYear(post->getDate().GetYear());
+	Month* postMonth = postYear->getMonth(post->getDate().GetMonth());
+	Day* postDay = postMonth->getDay(post->getDate().GetDay());
+
+	postDay->removePost(post);
+}
+
 int Calendar::getCurrentYear() {
 	return parts->tm_year + 1900;
 }

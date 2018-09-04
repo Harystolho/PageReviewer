@@ -25,4 +25,15 @@ std::vector<Post*> Day::getPosts(){
 	return posts;
 }
 
+void Day::removePost(Post* post){
+	for(auto it = posts.begin(); it != posts.end();){
+		if(*it == post){
+			posts.erase(it);
+			break;
+		} else{
+			++it;
+		}
+	}
+}
+
 } /* namespace Page */

@@ -7,6 +7,8 @@
 
 #include "PostAdapter.h"
 
+extern PageFrame* pageFrame;
+
 PostAdapter::PostAdapter(wxWindow* window, wxWindowID id, wxString text,
 		Post* post) :
 		wxStaticText(window, id, text), frame(nullptr), post(post) {
@@ -18,7 +20,7 @@ PostAdapter::~PostAdapter() {
 void PostAdapter::openWindow() {
 	if (frame == nullptr) {
 		frame = new wxFrame(NULL, wxID_ANY, post->getTitle(), wxDefaultPosition,
-				wxSize(1000, 500), wxSTAY_ON_TOP | wxDEFAULT_FRAME_STYLE);
+				wxSize(1000, 500), wxDEFAULT_FRAME_STYLE);
 	}
 
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
@@ -38,6 +40,12 @@ void PostAdapter::openWindow() {
 	wxButton *FIFTEENdays = new wxButton(frame, 553, "+15 Days");
 	wxButton *THIRTYdays = new wxButton(frame, 554, "+30 Days");
 	wxButton *FIFYdays = new wxButton(frame, 555, "+50 Days");
+
+	ONEday->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&){
+		pageFrame->getCalendar()->removePost(post);
+		post->updateReviewDate(post->getDate().Add(wxDateSpan::Days(1)));
+		pageFrame->getCalendar()->addPost(post);
+	}, 550);
 
 	timeSizer->Add(ONEday, 1);
 	timeSizer->Add(THREEdays, 1);
@@ -73,3 +81,5 @@ void PostAdapter::openWindow() {
 	frame->Center();
 	frame->Show();
 }
+
+

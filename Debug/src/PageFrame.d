@@ -146,7 +146,7 @@ src/PageFrame.o: ../src/PageFrame.cpp ../src/PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/scrolwin.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h \
  ../src/windows/../page/Day.h ../src/windows/../page/post.h \
- ../src/windows/PostAdapter.h \
+ ../src/windows/PostAdapter.h ../src/windows/../PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/stattext.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxcrtvararg.h \
@@ -160,7 +160,7 @@ src/PageFrame.o: ../src/PageFrame.cpp ../src/PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h \
- ../src/windows/AddPostWindow.h ../src/windows/../PageFrame.h \
+ ../src/windows/AddPostWindow.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datetimectrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datetimectrl.h \
@@ -474,6 +474,8 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h:
 
 ../src/windows/PostAdapter.h:
 
+../src/windows/../PageFrame.h:
+
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/stattext.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h:
@@ -501,8 +503,6 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h:
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h:
 
 ../src/windows/AddPostWindow.h:
-
-../src/windows/../PageFrame.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h:
 

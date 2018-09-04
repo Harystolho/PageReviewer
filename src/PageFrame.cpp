@@ -7,6 +7,8 @@
 
 #include "PageFrame.h"
 
+PageFrame* pageFrame;
+
 enum PAGE_ID {
 	ADD_POST, LIST_POSTS
 };
@@ -14,6 +16,9 @@ enum PAGE_ID {
 PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
 		const wxSize& size) :
 		wxFrame(NULL, wxID_ANY, title, pos, size), calendar(nullptr) {
+
+	pageFrame = this;
+
 	Center();
 
 	panel = new wxPanel(this, wxID_ANY);
@@ -104,7 +109,7 @@ void PageFrame::onListPosts(wxCommandEvent& event) {
 
 void PageFrame::redrawCalendar(){
 	calendarPanel->DestroyChildren();
-		drawCalendar();
+	drawCalendar();
 }
 
 Page::Calendar* PageFrame::getCalendar() {

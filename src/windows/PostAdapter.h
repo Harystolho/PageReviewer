@@ -9,6 +9,7 @@
 #define WINDOWS_POSTADAPTER_H_
 
 #include "../page/post.h"
+#include "../PageFrame.h"
 #include "wx/stattext.h"
 #include "wx/wxcrtvararg.h"
 #include "wx/frame.h"
