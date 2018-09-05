@@ -18,6 +18,7 @@
 #include "wx/textctrl.h"
 #include "wx/hyperlink.h"
 #include "wx/button.h"
+#include "wx/font.h"
 
 class PostAdapter: public wxStaticText {
 public:

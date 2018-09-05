@@ -24,12 +24,14 @@ void PostAdapter::openWindow() {
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
 
 	wxStaticText *title = new wxStaticText(frame, wxID_ANY, post->getTitle());
-	verticalSizer->Add(title, 1, wxALIGN_CENTER | wxTOP, 5);
+	verticalSizer->Add(title, 0, wxALIGN_CENTER | wxTOP, 5);
+
+	title->SetFont(wxFontInfo(20).FaceName("Inconsolata"));
 
 	if(!post->getLink().empty()){
 		wxHyperlinkCtrl *link = new wxHyperlinkCtrl(frame, wxID_ANY,
 				post->getLink(), post->getLink());
-		verticalSizer->Add(link, 1, wxALIGN_CENTER | wxBOTTOM, 15);
+		verticalSizer->Add(link, 0, wxALIGN_CENTER | wxBOTTOM, 15);
 	}
 
 	wxBoxSizer *timeSizer = new wxBoxSizer(wxHORIZONTAL);
@@ -67,11 +69,13 @@ void PostAdapter::openWindow() {
 	timeSizer->Add(THIRTYdays, 1);
 	timeSizer->Add(FIFYdays, 1);
 
-	verticalSizer->Add(timeSizer, 1, wxALIGN_TOP | wxALIGN_CENTER | wxALL, 5);
+	verticalSizer->Add(timeSizer, 0, wxALIGN_TOP | wxALIGN_CENTER | wxALL, 10);
 
 	wxTextCtrl *text = new wxTextCtrl(frame, wxID_ANY, post->getText(),
 			wxDefaultPosition, wxSize(1000, -1), wxTE_MULTILINE);
 	text->SetEditable(false);
+
+	text->SetFont(wxFontInfo(15).FaceName("Inconsolata"));
 
 	verticalSizer->Add(text, 5, wxEXPAND | wxALL, 7);
 
@@ -81,10 +85,11 @@ void PostAdapter::openWindow() {
 	wxButton *save = new wxButton(frame, 557, "SAVE");
 	wxButton *remove = new wxButton(frame, 558, "REMOVE");
 
-	edit->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+	edit->Bind(wxEVT_LEFT_DOWN, [text](wxMouseEvent&) {
 		text->SetEditable(true);
 	}, 556);
-	save->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
+	save->Bind(wxEVT_LEFT_DOWN, [&, text](wxMouseEvent&) {
+		text->SetEditable(false);
 		post->setText(text->GetValue().ToStdString());
 	}, 557);
 	remove->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
