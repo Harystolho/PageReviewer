@@ -79,15 +79,16 @@ void PageFrame::drawCalendar() {
 
 	for (int j = 0; j < rows && !exit; j++) {
 		for (int i = 0; i < colums; i++) {
-			PageVScrollBox *window = new PageVScrollBox(calendarPanel, wxID_ANY,
-					wxPoint(width * i, height * j), wxSize(width, height));
+			PageScrollBox *window = new PageScrollBox(calendarPanel, wxID_ANY,
+					wxPoint(width * i, height * j),
+					wxSize(width - 2, height - 2));
 
 			window->setDay(
 					calendar->getYear(Page::Calendar::getCurrentYear())->getMonth(
 							Page::Calendar::getCurrentMonth() + monthIndex)->getDay(
 							day));
 
-			window->SetBackgroundColour(wxColour("#ffd700"));
+			window->SetBackgroundColour(wxColour("#e5c100"));
 
 			window->drawPosts();
 

@@ -5,8 +5,8 @@
  *      Author: Harystolho
  */
 
-#ifndef WINDOWS_PAGEVSCROLLBOX_H_
-#define WINDOWS_PAGEVSCROLLBOX_H_
+#ifndef WINDOWS_PAGESCROLLBOX_H_
+#define WINDOWS_PAGESCROLLBOX_H_
 
 #include "wx/scrolwin.h"
 #include "../page/Day.h"
@@ -16,10 +16,10 @@
 #include "wx/gdicmn.h"
 #include "wx/event.h"
 
-class PageVScrollBox: public wxScrolledWindow {
+class PageScrollBox: public wxScrolledWindow {
 public:
-	PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point, wxSize size);
-	virtual ~PageVScrollBox();
+	PageScrollBox(wxWindow* window, wxWindowID id, wxPoint point, wxSize size);
+	virtual ~PageScrollBox();
 
 	void setDay(Page::Day *day);
 
@@ -30,8 +30,6 @@ private:
 	Page::Day* PageDay;
 
 	wxBoxSizer* sizer;
-
-	int rowHeight = 0;
 };
 
-#endif /* WINDOWS_PAGEVSCROLLBOX_H_ */
+#endif /* WINDOWS_PAGESCROLLBOX_H_ */

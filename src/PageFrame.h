@@ -15,10 +15,10 @@
 #include "Wx/button.h"
 #include "Calendar.h"
 #include "wx/colour.h"
-#include "windows/PageVScrollBox.h"
 #include "windows/AddPostWindow.h"
 #include "wx/wxcrtvararg.h"
 #include <list>
+#include "windows/PageScrollBox.h"
 
 class PageFrame: public wxFrame {
 public:

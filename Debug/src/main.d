@@ -242,17 +242,17 @@ src/main.o: ../src/main.cpp \
  ../src/page/post.h ../src/PageApp.h ../src/PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/Wx/button.h \
  ../src/Calendar.h ../src/page/Year.h ../src/page/Month.h \
- ../src/page/Day.h ../src/page/post.h ../src/windows/PageVScrollBox.h \
- ../src/windows/../page/Day.h ../src/windows/../page/post.h \
- ../src/windows/PostAdapter.h ../src/windows/../PageFrame.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h \
- ../src/windows/AddPostWindow.h \
+ ../src/page/Day.h ../src/page/post.h ../src/windows/AddPostWindow.h \
+ ../src/windows/../PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datetimectrl.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datetimectrl.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datectrl.h
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datectrl.h \
+ ../src/windows/../page/post.h ../src/windows/PageScrollBox.h \
+ ../src/windows/../page/Day.h ../src/windows/PostAdapter.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxprec.h:
 
@@ -752,23 +752,9 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/Wx/button.h:
 
 ../src/page/post.h:
 
-../src/windows/PageVScrollBox.h:
-
-../src/windows/../page/Day.h:
-
-../src/windows/../page/post.h:
-
-../src/windows/PostAdapter.h:
+../src/windows/AddPostWindow.h:
 
 ../src/windows/../PageFrame.h:
-
-D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h:
-
-D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h:
-
-D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h:
-
-../src/windows/AddPostWindow.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datectrl.h:
 
@@ -777,3 +763,17 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/datetimectrl.h:
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datetimectrl.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/datectrl.h:
+
+../src/windows/../page/post.h:
+
+../src/windows/PageScrollBox.h:
+
+../src/windows/../page/Day.h:
+
+../src/windows/PostAdapter.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h:
