@@ -17,7 +17,9 @@ PageScrollBox::PageScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 	sizer = new wxBoxSizer(wxVERTICAL);
 	SetSizer(sizer);
 
-	SetMaxSize(size);
+	SetBackgroundColour(wxColour("#e5c100"));
+
+	//SetMaxSize(size);
 }
 
 PageScrollBox::~PageScrollBox() {

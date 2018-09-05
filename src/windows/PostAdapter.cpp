@@ -12,6 +12,8 @@ extern PageFrame* pageFrame;
 PostAdapter::PostAdapter(wxWindow* window, wxWindowID id, wxString text,
 		Post* post) :
 		wxStaticText(window, id, text), frame(nullptr), post(post) {
+	SetFont(wxFontInfo(12).FaceName("Quicksand"));
+	SetToolTip(wxString(post->getTitle()));
 }
 
 PostAdapter::~PostAdapter() {

@@ -7,11 +7,12 @@
 
 #ifndef PAGEAPP_H_
 #define PAGEAPP_H_
+
 #include "wx/app.h"
 #include "PageFrame.h"
 #include "Calendar.h"
 
-class PageApp: public wxApp{
+class PageApp: public wxApp {
 public:
 	virtual bool OnInit();
 private:

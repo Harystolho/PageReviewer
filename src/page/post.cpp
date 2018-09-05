@@ -6,7 +6,6 @@
  */
 
 #include "post.h"
-#include <iostream>
 
 Post::Post() {
 

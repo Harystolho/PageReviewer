@@ -7,6 +7,10 @@
 
 #include "Calendar.h"
 
+using json = nlohmann::json;
+
+extern PageFrame* pageFrame;
+
 auto now = std::chrono::system_clock::now();
 std::time_t now_c = std::chrono::system_clock::to_time_t(now);
 static tm* parts = std::localtime(&now_c);
@@ -51,6 +55,42 @@ void Calendar::removePost(Post* post) {
 	Day* postDay = postMonth->getDay(post->getDate().GetDay());
 
 	postDay->removePost(post);
+}
+
+void Calendar::loadFromJson(std::string file) {
+	std::string jsonString = "";
+
+	std::ifstream input;
+	input.open(file);
+
+	std::string temp;
+	while (getline(input, temp)) {
+		jsonString += temp;
+	}
+
+	json j = json::parse(jsonString);
+
+	input.close();
+}
+
+void Calendar::saveToJson(std::string file) {
+	std::ofstream out(file);
+	json j;
+
+	for (auto itYear = years.begin(); itYear != years.end();) {
+		Year *year = *itYear;
+		for(int m = 0; m < 12; m++){
+			Month* month = year->getMonth(0);
+			for(int d=1; d <=31; d++){
+				Day* day = month->getDay(d);
+
+			}
+		}
+	}
+
+	out << j << std::endl;
+
+	out.close();
 }
 
 int Calendar::getCurrentYear() {

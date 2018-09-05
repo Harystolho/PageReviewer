@@ -1,9 +1,11 @@
 #include "PageApp.h"
 
+
 bool PageApp::OnInit() {
 	frame = new PageFrame("Page Reviewer", wxPoint(0, 0), wxSize(1280, 720));
 
 	frame->setCalendar(createCalendar());
+	frame->getCalendar()->loadFromJson("posts.json");
 
 	frame->showCalendar();
 

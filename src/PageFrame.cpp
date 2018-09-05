@@ -26,6 +26,11 @@ PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
 	createObjects();
 	connectEventHandlers();
 
+	Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& e){
+		calendar->saveToJson("posts.json");
+		e.Skip();
+	}, wxID_ANY);
+
 }
 
 void PageFrame::OnAddPost(wxCommandEvent& event) {
@@ -87,8 +92,6 @@ void PageFrame::drawCalendar() {
 					calendar->getYear(Page::Calendar::getCurrentYear())->getMonth(
 							Page::Calendar::getCurrentMonth() + monthIndex)->getDay(
 							day));
-
-			window->SetBackgroundColour(wxColour("#e5c100"));
 
 			window->drawPosts();
 

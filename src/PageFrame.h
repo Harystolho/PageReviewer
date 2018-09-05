@@ -8,6 +8,10 @@
 #ifndef PAGEFRAME_H_
 #define PAGEFRAME_H_
 
+namespace Page {
+	class Calendar;
+}
+
 #include "wx/frame.h"
 #include "wx/event.h"
 #include "wx/menu.h"

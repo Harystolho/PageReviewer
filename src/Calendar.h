@@ -8,10 +8,14 @@
 #ifndef CALENDAR_H_
 #define CALENDAR_H_
 
+#include "PageFrame.h"
 #include "page/Year.h"
 #include "page/post.h"
 #include "chrono"
 #include <vector>
+#include "nlohmann/json.hpp"
+#include "fstream"
+#include "ostream"
 
 namespace Page {
 
@@ -27,6 +31,9 @@ public:
 
 	void addPost(Post *post);
 	void removePost(Post* post);
+
+	void loadFromJson(std::string file);
+	void saveToJson(std::string file);
 
 	static int getCurrentYear();
 	static int getCurrentMonth();
