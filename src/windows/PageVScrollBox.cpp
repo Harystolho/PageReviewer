@@ -10,7 +10,7 @@
 
 PageVScrollBox::PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 		wxSize size) :
-		wxVScrolledWindow(window, wxID_ANY, point, size), day(0), PageDay(
+		wxScrolledWindow(window, wxID_ANY, point, size), day(0), PageDay(
 				nullptr) {
 
 	sizer = new wxBoxSizer(wxVERTICAL);
@@ -20,10 +20,6 @@ PageVScrollBox::PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 }
 
 PageVScrollBox::~PageVScrollBox() {
-}
-
-wxCoord PageVScrollBox::OnGetRowHeight(size_t row) const {
-	return rowHeight;
 }
 
 void PageVScrollBox::setDay(Page::Day* day) {
@@ -41,10 +37,12 @@ void PageVScrollBox::drawPosts() {
 
 		rowHeight = text->GetSize().GetHeight();
 
-		GetSizer()->Add(text, 1, wxALL, 2);
+		GetSizer()->Add(text, 0, wxALL, 2);
 	}
 	// TODO fix this shit
-	SetSizerAndFit(sizer, true);
+	//SetSizerAndFit(sizer, true);
+	SetSizer(sizer, true);
+	FitInside();
 	//SetRowCount(GetSizer()->GetItemCount());
 }
 

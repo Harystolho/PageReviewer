@@ -8,7 +8,7 @@
 #ifndef WINDOWS_PAGEVSCROLLBOX_H_
 #define WINDOWS_PAGEVSCROLLBOX_H_
 
-#include "wx/vscroll.h"
+#include "wx/scrolwin.h"
 #include "../page/Day.h"
 #include "../page/post.h"
 #include "PostAdapter.h"
@@ -16,12 +16,10 @@
 #include "wx/gdicmn.h"
 #include "wx/event.h"
 
-class PageVScrollBox: public wxVScrolledWindow {
+class PageVScrollBox: public wxScrolledWindow {
 public:
 	PageVScrollBox(wxWindow* window, wxWindowID id, wxPoint point, wxSize size);
 	virtual ~PageVScrollBox();
-
-	wxCoord OnGetRowHeight(size_t row) const;
 
 	void setDay(Page::Day *day);
 

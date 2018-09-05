@@ -19,7 +19,7 @@ PostAdapter::~PostAdapter() {
 
 void PostAdapter::openWindow() {
 	frame = new wxFrame(NULL, wxID_ANY, post->getTitle(), wxDefaultPosition,
-			wxSize(1000, 500), wxDEFAULT_FRAME_STYLE);
+			wxSize(1000, 750));
 
 	wxBoxSizer *verticalSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -72,7 +72,7 @@ void PostAdapter::openWindow() {
 	verticalSizer->Add(timeSizer, 0, wxALIGN_TOP | wxALIGN_CENTER | wxALL, 10);
 
 	wxTextCtrl *text = new wxTextCtrl(frame, wxID_ANY, post->getText(),
-			wxDefaultPosition, wxSize(1000, -1), wxTE_MULTILINE);
+			wxDefaultPosition, wxSize(1000, 550), wxTE_MULTILINE);
 	text->SetEditable(false);
 
 	text->SetFont(wxFontInfo(15).FaceName("Inconsolata"));
@@ -87,10 +87,12 @@ void PostAdapter::openWindow() {
 
 	edit->Bind(wxEVT_LEFT_DOWN, [text](wxMouseEvent&) {
 		text->SetEditable(true);
+		text->SetBackgroundColour(wxColour("#464646"));
 	}, 556);
 	save->Bind(wxEVT_LEFT_DOWN, [&, text](wxMouseEvent&) {
 		text->SetEditable(false);
 		post->setText(text->GetValue().ToStdString());
+		text->SetBackgroundColour(wxColour("#323232"));
 	}, 557);
 	remove->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent&) {
 		pageFrame->getCalendar()->removePost(post);
@@ -103,11 +105,20 @@ void PostAdapter::openWindow() {
 	editTools->Add(save, 1, wxALL, 3);
 	editTools->Add(remove, 1, wxALL, 3);
 
-	verticalSizer->Add(editTools, 1, wxALIGN_CENTER);
+	verticalSizer->Add(editTools, 0, wxALIGN_CENTER | wxBOTTOM, 7);
 
 	verticalSizer->SetSizeHints(frame);
 
 	frame->SetSizer(verticalSizer);
+
+	// Style
+	frame->SetBackgroundColour(wxColour("#848484"));
+
+	title->SetForegroundColour(wxColour("#fff"));
+
+	text->SetBackgroundColour(wxColour("#323232"));
+	text->SetForegroundColour(wxColour("#fff"));
+	// Style
 
 	frame->Center();
 	frame->Show();

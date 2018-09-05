@@ -46,8 +46,6 @@ void PageFrame::createObjects() {
 			wxSize(this->GetSize().GetWidth() - 45,
 					this->GetSize().GetHeight() - 15 - 30
 							- addPost->GetSize().GetHeight() - 45));
-
-	calendarPanel->SetBackgroundColour(wxColour(204, 204, 204));
 }
 
 void PageFrame::connectEventHandlers() {
@@ -89,6 +87,8 @@ void PageFrame::drawCalendar() {
 							Page::Calendar::getCurrentMonth() + monthIndex)->getDay(
 							day));
 
+			window->SetBackgroundColour(wxColour("#ffd700"));
+
 			window->drawPosts();
 
 			if (day == 31) {
@@ -107,7 +107,7 @@ void PageFrame::onListPosts(wxCommandEvent& event) {
 	redrawCalendar();
 }
 
-void PageFrame::redrawCalendar(){
+void PageFrame::redrawCalendar() {
 	calendarPanel->DestroyChildren();
 	drawCalendar();
 }

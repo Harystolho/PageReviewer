@@ -19,6 +19,7 @@
 #include "wx/hyperlink.h"
 #include "wx/button.h"
 #include "wx/font.h"
+#include "wx/colour.h"
 
 class PostAdapter: public wxStaticText {
 public:

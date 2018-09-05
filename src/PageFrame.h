@@ -14,7 +14,7 @@
 #include "wx/panel.h"
 #include "Wx/button.h"
 #include "Calendar.h"
-#include "wx/gdicmn.h"
+#include "wx/colour.h"
 #include "windows/PageVScrollBox.h"
 #include "windows/AddPostWindow.h"
 #include "wx/wxcrtvararg.h"
