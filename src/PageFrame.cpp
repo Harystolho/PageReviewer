@@ -10,7 +10,7 @@
 PageFrame* pageFrame;
 
 enum PAGE_ID {
-	ADD_POST, LIST_POSTS
+	ADD_POST, LIST_POSTS, NEXT_MONTH, PREVIOUS_MONTH
 };
 
 PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
@@ -26,7 +26,7 @@ PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
 	createObjects();
 	connectEventHandlers();
 
-	Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& e){
+	Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& e) {
 		calendar->saveToJson("posts.json");
 		e.Skip();
 	}, wxID_ANY);
@@ -46,6 +46,11 @@ void PageFrame::createObjects() {
 					addPost->GetPosition().x + addPost->GetSize().GetWidth()
 							+ PageFrame::BUTTON_SPACING, 15));
 
+	previousMonth = new wxButton(panel, PREVIOUS_MONTH, wxT("<<-"),
+			wxPoint(GetSize().GetWidth() - 160, 15), wxSize(50, -1));
+	nextMonth = new wxButton(panel, NEXT_MONTH, wxT("->>"),
+			wxPoint(GetSize().GetWidth() - 100, 15), wxSize(50, -1));
+
 	calendarPanel = new wxPanel(panel, wxID_ANY,
 			wxPoint(15, addPost->GetPosition().y + 45),
 			wxSize(this->GetSize().GetWidth() - 45,
@@ -58,6 +63,10 @@ void PageFrame::connectEventHandlers() {
 			wxCommandEventHandler(PageFrame::OnAddPost));
 	Connect(LIST_POSTS, wxEVT_COMMAND_BUTTON_CLICKED,
 			wxCommandEventHandler(PageFrame::onListPosts));
+	Connect(PREVIOUS_MONTH, wxEVT_COMMAND_BUTTON_CLICKED,
+				wxCommandEventHandler(PageFrame::onPreviousMonth));
+	Connect(NEXT_MONTH, wxEVT_COMMAND_BUTTON_CLICKED,
+				wxCommandEventHandler(PageFrame::onNextMonth));
 }
 
 void PageFrame::setCalendar(Page::Calendar *calendar) {
@@ -111,6 +120,15 @@ void PageFrame::onListPosts(wxCommandEvent& event) {
 	redrawCalendar();
 }
 
+void PageFrame::onPreviousMonth(wxCommandEvent& event) {
+	monthIndex--;
+	redrawCalendar();
+}
+
+void PageFrame::onNextMonth(wxCommandEvent& event) {
+	monthIndex++;
+	redrawCalendar();
+}
 void PageFrame::redrawCalendar() {
 	calendarPanel->DestroyChildren();
 	drawCalendar();
@@ -118,4 +136,8 @@ void PageFrame::redrawCalendar() {
 
 Page::Calendar* PageFrame::getCalendar() {
 	return calendar;
+}
+
+bool PageFrame::isDisplayingCurrentMonth(){
+	return monthIndex == 0;
 }

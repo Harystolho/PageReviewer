@@ -9,6 +9,8 @@
 
 #include "iostream"
 
+extern PageFrame* pageFrame;
+
 PageScrollBox::PageScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 		wxSize size) :
 		wxScrolledWindow(window, wxID_ANY, point, size), PageDay(nullptr) {
@@ -36,7 +38,7 @@ void PageScrollBox::setDay(Page::Day* day) {
 
 	this->dayText->SetLabel(std::to_string(day->getDay()));
 
-	if (day->getDay() == Page::Calendar::getCurrentDay()) {
+	if (day->getDay() == Page::Calendar::getCurrentDay() && pageFrame->isDisplayingCurrentMonth()) {
 		SetBackgroundColour(wxColour("#b79a00"));
 	}
 

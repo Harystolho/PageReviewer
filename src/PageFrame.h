@@ -35,21 +35,29 @@ public:
 
 	void redrawCalendar();
 
+	bool isDisplayingCurrentMonth();
+
 	const int BUTTON_SPACING = 15;
 private:
 
-	uint8_t monthIndex = 0;
+	int8_t monthIndex = 0;
 
 	Page::Calendar* calendar;
 
 	wxButton* addPost;
 	wxButton* listPosts;
 
+	wxButton* nextMonth;
+	wxButton* previousMonth;
+
 	wxPanel *panel;
 	wxPanel *calendarPanel;
 
 	void OnAddPost(wxCommandEvent& event);
 	void onListPosts(wxCommandEvent& event);
+
+	void onPreviousMonth(wxCommandEvent& event);
+	void onNextMonth(wxCommandEvent& event);
 
 	void createObjects();
 	void connectEventHandlers();
