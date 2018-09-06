@@ -20,15 +20,6 @@ namespace Page {
 Calendar::Calendar() {
 	years.push_back(new Year(getCurrentYear()));
 	years.push_back(new Year(getCurrentYear() + 1));
-
-	Post *post = new Post();
-	post->setTitle("My New Post");
-	post->setLink("http://neume.sourceforge.net/sizerdemo/");
-	post->setDate(wxDateTime::Now());
-	post->setText(
-			"This will most often mean that the programmer does not set the original size of a dialog in the beginning, rather \nthe dialog will be assigned a sizer and this sizer will be queried about the recommended size. The sizer in turn will query its children, which can be normal windows, empty space or other sizers, so that a hierarchy of sizers can be\n constructed. Note that wxSizer does not derive from wxWindow and thus does not interfere with tab ordering and requires very little resources compared to a real window on screen.What makes sizers so well fitted for use in wxWidgets is the fact that every control reports its own minimal size and the algorithm can handle differences \nin font sizes or different window (dialog item) sizes on different platforms without problems. If e.g. the standard font as well as the overall design of Motif widgets requires more space than on Windows, the initial dialog size will automatically be bigger on Motif than on \nWindows.");
-
-	addPost(post);
 }
 
 Calendar::~Calendar() {
@@ -58,37 +49,50 @@ void Calendar::removePost(Post* post) {
 }
 
 void Calendar::loadFromJson(std::string file) {
-	std::string jsonString = "";
-
 	std::ifstream input;
 	input.open(file);
 
-	std::string temp;
-	while (getline(input, temp)) {
-		jsonString += temp;
-	}
+	json j;
+	input >> j;
 
-	json j = json::parse(jsonString);
+	for (json::iterator it = j.begin(); it != j.end(); ++it) {
+		Post *post = new Post();
+
+		post->setTitle(it->at("title").get<std::string>());
+		post->setLink(it->at("link").get<std::string>());
+		wxDateTime date;
+		date.ParseDate(it->at("date").get<std::string>());
+		post->setDate(date);
+		post->setText(it->at("text").get<std::string>());
+
+		pageFrame->getCalendar()->addPost(post);
+	}
 
 	input.close();
 }
 
 void Calendar::saveToJson(std::string file) {
 	std::ofstream out(file);
-	json j;
+	json PostsJSON;
 
-	for (auto itYear = years.begin(); itYear != years.end();) {
+	for (auto itYear = years.begin(); itYear != years.end(); itYear++) {
 		Year *year = *itYear;
-		for(int m = 0; m < 12; m++){
-			Month* month = year->getMonth(0);
-			for(int d=1; d <=31; d++){
+		for (int m = 0; m < 12; m++) {
+			Month* month = year->getMonth(m);
+			for (int d = 1; d <= 31; d++) {
 				Day* day = month->getDay(d);
-
+				for (Post* p : day->getPosts()) {
+					json j = json { { "title", p->getTitle() }, { "link",
+							p->getLink() }, { "date",
+							p->getDate().FormatISODate() }, { "text",
+							p->getText() } };
+					PostsJSON.push_back(j);
+				}
 			}
 		}
 	}
 
-	out << j << std::endl;
+	out << PostsJSON << std::endl;
 
 	out.close();
 }
