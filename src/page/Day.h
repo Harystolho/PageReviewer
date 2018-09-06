@@ -15,13 +15,21 @@ namespace Page {
 
 class Day {
 public:
-	Day();
+	Day(int day);
 	virtual ~Day();
 	std::vector<Post*> getPosts();
 	void addPost(Post *post);
 	void removePost(Post *post);
+
+	int getDay() {
+		return day;
+	}
+
 private:
 	std::vector<Post*> posts;
+
+	int day;
+
 };
 
 } /* namespace Page */

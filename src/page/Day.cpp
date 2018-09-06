@@ -9,8 +9,8 @@
 
 namespace Page {
 
-Day::Day() {
-
+Day::Day(int day) {
+	this->day = day;
 }
 
 Day::~Day() {

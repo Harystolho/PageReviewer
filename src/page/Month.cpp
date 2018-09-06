@@ -11,7 +11,7 @@ namespace Page {
 
 Month::Month() {
 	for (int i = 0; i <= 30; i++) {
-		days[i] = new Day();
+		days[i] = new Day(i+1);
 	}
 }
 

@@ -15,6 +15,7 @@
 #include "wx/sizer.h"
 #include "wx/gdicmn.h"
 #include "wx/event.h"
+#include "wx/stattext.h"
 
 class PageScrollBox: public wxScrolledWindow {
 public:
@@ -26,10 +27,12 @@ public:
 	void drawPosts();
 
 private:
-	int day;
 	Page::Day* PageDay;
 
+	wxStaticText* dayText;
+
 	wxBoxSizer* sizer;
+	wxBoxSizer* postSizer;
 };
 
 #endif /* WINDOWS_PAGESCROLLBOX_H_ */

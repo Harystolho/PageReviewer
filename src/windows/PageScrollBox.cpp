@@ -11,10 +11,16 @@
 
 PageScrollBox::PageScrollBox(wxWindow* window, wxWindowID id, wxPoint point,
 		wxSize size) :
-		wxScrolledWindow(window, wxID_ANY, point, size), day(0), PageDay(
-				nullptr) {
+		wxScrolledWindow(window, wxID_ANY, point, size), PageDay(nullptr) {
 
 	sizer = new wxBoxSizer(wxVERTICAL);
+
+	dayText = new wxStaticText(this, wxID_ANY, "0");
+	postSizer = new wxBoxSizer(wxVERTICAL);
+
+	sizer->Add(dayText, 0, wxLEFT, 3);
+	sizer->Add(postSizer);
+
 	SetSizer(sizer);
 
 	SetBackgroundColour(wxColour("#e5c100"));
@@ -27,6 +33,13 @@ PageScrollBox::~PageScrollBox() {
 
 void PageScrollBox::setDay(Page::Day* day) {
 	PageDay = day;
+
+	this->dayText->SetLabel(std::to_string(day->getDay()));
+
+	if (day->getDay() == Page::Calendar::getCurrentDay()) {
+		SetBackgroundColour(wxColour("#b79a00"));
+	}
+
 }
 
 void PageScrollBox::drawPosts() {
@@ -38,10 +51,11 @@ void PageScrollBox::drawPosts() {
 			text->openWindow();
 		}, id);
 
-		GetSizer()->Add(text, 0, wxALL, 2);
+		postSizer->Add(text, 0, wxALL, 2);
 	}
+
 	SetSizer(sizer, true);
 	FitInside();
-	SetScrollRate(0,5);
+	SetScrollRate(0, 5);
 }
 
