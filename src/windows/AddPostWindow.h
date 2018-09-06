@@ -17,6 +17,7 @@
 #include "wx/datectrl.h"
 #include "wx/stattext.h"
 #include "../page/post.h"
+#include "wx/sizer.h"
 
 class PageFrame;
 
@@ -35,7 +36,7 @@ private:
 	void createObjects();
 
 	PageFrame* pageFrame;
-	wxPanel* panel;
+	wxBoxSizer* sizer;
 
 	void OnAddPost(wxCommandEvent& event);
 

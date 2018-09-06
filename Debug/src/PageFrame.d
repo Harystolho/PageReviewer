@@ -183,13 +183,13 @@ src/PageFrame.o: ../src/PageFrame.cpp ../src/PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/stattext.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h \
  ../src/windows/../page/post.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sizer.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxcrtvararg.h \
  ../src/windows/PageScrollBox.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/scrolwin.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/scrolwin.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h \
  ../src/windows/../page/Day.h ../src/windows/PostAdapter.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sizer.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h
@@ -574,6 +574,8 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/stattext.h:
 
 ../src/windows/../page/post.h:
 
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sizer.h:
+
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/wxcrtvararg.h:
 
 ../src/windows/PageScrollBox.h:
@@ -587,8 +589,6 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/recguard.h:
 ../src/windows/../page/Day.h:
 
 ../src/windows/PostAdapter.h:
-
-D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sizer.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h:
 
