@@ -10,7 +10,7 @@
 PageFrame* pageFrame;
 
 enum PAGE_ID {
-	ADD_POST, LIST_POSTS, NEXT_MONTH, PREVIOUS_MONTH
+	ADD_POST, LIST_POSTS, NEXT_MONTH, PREVIOUS_MONTH, BACKUP
 };
 
 PageFrame::PageFrame(const wxString& title, const wxPoint& pos,
@@ -46,6 +46,11 @@ void PageFrame::createObjects() {
 					addPost->GetPosition().x + addPost->GetSize().GetWidth()
 							+ PageFrame::BUTTON_SPACING, 15));
 
+	backup = new wxButton(panel, BACKUP, wxT("Backup"),
+			wxPoint(
+					listPosts->GetPosition().x + listPosts->GetSize().GetWidth()
+							+ PageFrame::BUTTON_SPACING, 15));
+
 	previousMonth = new wxButton(panel, PREVIOUS_MONTH, wxT("<<-"),
 			wxPoint(GetSize().GetWidth() - 160, 15), wxSize(50, -1));
 	nextMonth = new wxButton(panel, NEXT_MONTH, wxT("->>"),
@@ -63,10 +68,14 @@ void PageFrame::connectEventHandlers() {
 			wxCommandEventHandler(PageFrame::OnAddPost));
 	Connect(LIST_POSTS, wxEVT_COMMAND_BUTTON_CLICKED,
 			wxCommandEventHandler(PageFrame::onListPosts));
+
+	Connect(BACKUP, wxEVT_COMMAND_BUTTON_CLICKED,
+			wxCommandEventHandler(PageFrame::onBackup));
+
 	Connect(PREVIOUS_MONTH, wxEVT_COMMAND_BUTTON_CLICKED,
-				wxCommandEventHandler(PageFrame::onPreviousMonth));
+			wxCommandEventHandler(PageFrame::onPreviousMonth));
 	Connect(NEXT_MONTH, wxEVT_COMMAND_BUTTON_CLICKED,
-				wxCommandEventHandler(PageFrame::onNextMonth));
+			wxCommandEventHandler(PageFrame::onNextMonth));
 }
 
 void PageFrame::setCalendar(Page::Calendar *calendar) {
@@ -138,6 +147,22 @@ Page::Calendar* PageFrame::getCalendar() {
 	return calendar;
 }
 
-bool PageFrame::isDisplayingCurrentMonth(){
+bool PageFrame::isDisplayingCurrentMonth() {
 	return monthIndex == 0;
+}
+
+void PageFrame::onBackup(wxCommandEvent& event) {
+	wxFileDialog* dialog = new wxFileDialog(this, "Save backup file", "",
+			wxDateTime::Now().FormatISODate(), "JSON (*.json)|*.json",
+			wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+
+	if (dialog->ShowModal() == wxID_CANCEL) {
+		return;
+	}
+
+	std::ifstream src("posts.json", std::ios::binary);
+	std::ofstream dst(dialog->GetPath(), std::ios::binary);
+
+	dst << src.rdbuf();
+
 }

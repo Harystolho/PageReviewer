@@ -23,6 +23,7 @@ namespace Page {
 #include "wx/wxcrtvararg.h"
 #include <list>
 #include "windows/PageScrollBox.h"
+#include "wx/filedlg.h"
 
 class PageFrame: public wxFrame {
 public:
@@ -47,6 +48,8 @@ private:
 	wxButton* addPost;
 	wxButton* listPosts;
 
+	wxButton* backup;
+
 	wxButton* nextMonth;
 	wxButton* previousMonth;
 
@@ -58,6 +61,8 @@ private:
 
 	void onPreviousMonth(wxCommandEvent& event);
 	void onNextMonth(wxCommandEvent& event);
+
+	void onBackup(wxCommandEvent& event);
 
 	void createObjects();
 	void connectEventHandlers();

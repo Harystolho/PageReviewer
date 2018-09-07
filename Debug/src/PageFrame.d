@@ -192,7 +192,13 @@ src/PageFrame.o: ../src/PageFrame.cpp ../src/PageFrame.h \
  ../src/windows/../page/Day.h ../src/windows/PostAdapter.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h \
- D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/filedlg.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/dialog.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sharedptr.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/atomic.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/dialog.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/filedlg.h
 
 ../src/PageFrame.h:
 
@@ -595,3 +601,15 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/hyperlink.h:
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/hyperlink.h:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/hyperlink.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/filedlg.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/dialog.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/sharedptr.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/atomic.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/dialog.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/msw/filedlg.h:
