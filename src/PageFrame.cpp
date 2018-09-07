@@ -152,17 +152,24 @@ bool PageFrame::isDisplayingCurrentMonth() {
 }
 
 void PageFrame::onBackup(wxCommandEvent& event) {
-	wxFileDialog* dialog = new wxFileDialog(this, "Save backup file", "",
-			wxDateTime::Now().FormatISODate(), "JSON (*.json)|*.json",
-			wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+
+	wxString f = wxDateTime::Now().FormatISODate() + " "
+			+ wxDateTime::Now().Format(wxS("%H.%M.%S"));
+
+	wxFileDialog* dialog = new wxFileDialog(this, "Save backup file", "", f,
+			"JSON (*.json)|*.json", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
 
 	if (dialog->ShowModal() == wxID_CANCEL) {
 		return;
 	}
 
-	std::ifstream src("posts.json", std::ios::binary);
-	std::ofstream dst(dialog->GetPath(), std::ios::binary);
+	calendar->saveToJson(dialog->GetPath().ToStdString());
 
-	dst << src.rdbuf();
+	/*std::ifstream src("posts.json", std::ios::binary);
+	 std::ofstream dst(dialog->GetPath(), std::ios::binary);
+
+	 dst << src.rdbuf();*/
+
+	dialog->Destroy();
 
 }
