@@ -16,6 +16,7 @@
 #include "nlohmann/json.hpp"
 #include "fstream"
 #include "ostream"
+#include "wx/log.h"
 
 namespace Page {
 

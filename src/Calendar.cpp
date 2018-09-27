@@ -92,7 +92,11 @@ void Calendar::saveToJson(std::string file) {
 		}
 	}
 
-	out << PostsJSON << std::endl;
+	try{
+		out << PostsJSON << std::endl;
+	}catch(...){
+		wxLogError("Invalid Text");
+	}
 
 	out.close();
 }

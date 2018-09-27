@@ -122,6 +122,10 @@ void PostAdapter::openWindow() {
 	text->SetForegroundColour(wxColour("#fff"));
 	// Style
 
+	if(post->getText().size() > 2500){
+		frame->SetSize(wxSize(1450, 900));
+	}
+
 	frame->Center();
 	frame->Show();
 }

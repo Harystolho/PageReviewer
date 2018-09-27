@@ -169,6 +169,8 @@ src/PageFrame.o: ../src/PageFrame.cpp ../src/PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/nlohmann/detail/json_pointer.hpp \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/nlohmann/adl_serializer.hpp \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/nlohmann/detail/macro_unscope.hpp \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/log.h \
+ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/logg.h \
  ../src/windows/AddPostWindow.h ../src/windows/../PageFrame.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/button.h \
  D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/textctrl.h \
@@ -549,6 +551,10 @@ D:\Workspace\cplusplus\Learn\libs\WxWidget\include/nlohmann/detail/json_pointer.
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/nlohmann/adl_serializer.hpp:
 
 D:\Workspace\cplusplus\Learn\libs\WxWidget\include/nlohmann/detail/macro_unscope.hpp:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/log.h:
+
+D:\Workspace\cplusplus\Learn\libs\WxWidget\include/wx/generic/logg.h:
 
 ../src/windows/AddPostWindow.h:
 

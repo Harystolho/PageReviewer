@@ -96,7 +96,7 @@ void AddPostWindow::createObjects() {
 }
 
 void AddPostWindow::OnAddPost(wxCommandEvent& event) {
-	if(title->GetValue().IsEmpty() || !date->GetValue().IsValid() || text->GetValue().IsEmpty()){
+	if(title->GetValue().IsEmpty() || !date->GetValue().IsValid()){
 		return;
 	}
 

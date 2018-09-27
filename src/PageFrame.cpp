@@ -165,11 +165,6 @@ void PageFrame::onBackup(wxCommandEvent& event) {
 
 	calendar->saveToJson(dialog->GetPath().ToStdString());
 
-	/*std::ifstream src("posts.json", std::ios::binary);
-	 std::ofstream dst(dialog->GetPath(), std::ios::binary);
-
-	 dst << src.rdbuf();*/
-
 	dialog->Destroy();
 
 }
